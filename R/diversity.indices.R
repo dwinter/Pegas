@@ -1,7 +1,7 @@
 ##
 # diversity.indices 
 #
-# summarise a few molcular diversity statistics for an aligment
+# calculate a few molcular diversity statistics for an aligment
 ##
 
 diversity.indices <- function(d){
