@@ -1,0 +1,137 @@
+		CHANGES IN PEGAS VERSION 0.4
+
+
+NEW FEATURES
+
+    o The new function rr.test by Alastair Potts performs Tajima's test
+      of a molecular clock (Genetics, 1993, 135:599).
+
+    o haploNet() has a new argument 'd = NULL' to specify an
+      alternative distance matrix among haplotypes.
+
+    o There are two new functions, as.network.haploNet() and
+      as.igraph.haploNet() for converting networks of class
+      "haploNet" towards other packages.
+
+
+BUG FIXES
+
+    o plot.haploNet() has now by default asp = 1.
+
+
+
+		CHANGES IN PEGAS VERSION 0.3-4
+
+
+OTHER CHANGES
+
+    o The help command ?loci now points to the man page of read.loci()
+      where this class is described.
+
+
+
+		CHANGES IN PEGAS VERSION 0.3-3
+
+
+BUG FIXES
+
+    o read.loci() failed with haploid data. It also failed in some
+      situations with the population column. The default behaviour is now
+      more flexible and more reliable.
+
+    o Variance components were not correctly computed by amova() in the
+      single-level case.
+
+    o print.amova() did not work correctly when amova() was called with
+      'nperm = 0'.
+
+
+
+		CHANGES IN PEGAS VERSION 0.3-2
+
+
+BUG FIXES
+
+    o A bug was fixed in Fst().
+
+
+
+		CHANGES IN PEGAS VERSION 0.3-1
+
+
+OTHER CHANGES
+
+    o The default of 'loci.sep' in read.loci() is now "".
+
+
+
+		CHANGES IN PEGAS VERSION 0.3
+
+
+NEW FEATURES
+
+    o The new function edit.loci allows to edit allelic data frame while
+      keeping the attributes correct (which edit.data.frame doesn't).
+
+    o There are new rbind() and cbind() methods for objects of class
+      "loci".
+
+    o There is a print 'method' for the class "haplotype".
+
+    o `[.loci` has now an option 'drop = TRUE'.
+
+    o There is a vignette detailing how to read allelic data files of
+      various formats into R: type vignette("ReadingFiles") in R.
+
+
+BUG FIXES
+
+    o amova() did not compute SSD correctly with a single level.
+
+    o getAlleles() did not work correctly.
+
+    o read.loci() did not work when `col.pop' was used.
+
+    o Checking for ordered alleles did not work (i.e, A/a and a/A were
+      treated as different genotypes: they are now pooled).
+
+    o The display of haplotype labels by plot.haploNet() was not
+      effective.
+
+
+OTHER CHANGES
+
+    o read.loci() loses the `skip' option which is replaced by `...'.
+
+
+
+		CHANGES IN PEGAS VERSION 0.2
+
+
+NEW FEATURES
+
+    o The new function site.spectrum computes the (un)folded site
+      frequency spectrum of a set of DNA sequences.
+
+    o The new function theta.tree estimates THETA from a phylogenetic tree
+      under a simple coalescent model by maximum likelihood.
+
+    o There is now a "[" method for the class "loci".
+
+    o haplotype() has now an option 'labels' to give as rownames of
+      the returned object.
+
+    o amova() has a new option 'is.squared' to specify whether the
+      distance matrix has been squared beforefand (FALSE by default).
+
+    o write.loci() has a new argument '...' passed to write.table().
+
+    o The functions heterozygosity, nuc.div, theta.h, theta.k and
+      theta.s have been moved from ape to pegas.
+
+
+BUG FIXES
+
+    o amova() did not compute SSD correctly.
+
+    o summary.loci() failed in the presence of NA's.

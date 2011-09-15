@@ -1,0 +1,10 @@
+exportPattern(".+")
+
+import(ape)
+
+S3method(print, loci)
+S3method(summary, loci)
+S3method(print, summary.loci)
+S3method(plot, summary.loci)
+S3method(plot, haplotype)
+S3method(plot, haploNet)
