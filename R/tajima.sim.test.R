@@ -35,10 +35,11 @@ tajima.sim.test <- function(x, nreps=1000, plot=TRUE){
     m <- lapply(hap.index, get.seqs)
     khats <- sapply(m, function(x) mean(dist(x,'manhattan')))
     Ds <- tajima.test2(n, khats, S)
-    p.greater <- sum (observed.D > Ds)/n
+    centered <- scale(Ds, scale=FALSE)
+    pval <- mean(abs(centered) > abs(observed.D))
     if (plot){
       hist(Ds)
      abline(v=observed.D, col="blue")
     }
-    return(list(D=observed.D, p.value=p.greater))
+    return(list(D=observed.D, p.value=pval))
 }
