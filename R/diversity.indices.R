@@ -20,9 +20,10 @@ diversity.indices <- function(d){
 #
 #data(woodmouse)
 #> diversity.indices(woodmouse)
-#   n n.haplotypes h seggregating.sites nucleotide.diversity
-#d 15           15 1                 56           0.01294610
-#set.seed(123)
+#           n n.haplotypes h seggregating.sites nucleotide.diversity
+#woodmouse 15           15 1                 56           0.01294610
+#
+#>set.seed(123)
 #> to.sample <- sample(1:dim(woodmouse)[1], 20, replace=TRUE)
 #> d <- woodmouse[to.sample, ]
 #> diversity.indices(d)
