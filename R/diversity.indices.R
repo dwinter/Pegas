@@ -13,7 +13,7 @@ diversity.indices <- function(d){
     "seggregating sites" = length(seg.sites(d)),
     "nucleotide diversity" =  nuc.div(d)
   )
-  row.names(result) <- as.character(bquote(d))
+  row.names(result) <- substitute(d)
   return(result)
 }
 

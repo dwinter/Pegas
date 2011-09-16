@@ -18,3 +18,10 @@ compare.diversity <- function(d, sites){
   h.diversity <- sapply(sapply(u.sites, function(s) haplotype(d[sites==s,])), h.div)
   return(cbind(n, n.haplo,private,h.diversity,pi, segregating.sites))
 }
+
+#> compare.diversity(woodmouse, c(rep('ni', 10), rep('si', 5)))
+#    n n.haplo private h.diversity         pi segregating.sites
+#ni 10      10      10           1 0.01222921                45
+#si  5       5       5           1 0.01540984                30
+ 
+
