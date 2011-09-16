@@ -36,7 +36,7 @@ tajima.sim.test <- function(x, nreps=1000, plot=TRUE){
     khats <- sapply(m, function(x) mean(dist(x,'manhattan')))
     Ds <- tajima.test2(n, khats, S)
     centered <- scale(Ds, scale=FALSE)
-    pval <- mean(abs(centered) > abs(observed.D))
+    pval <- mean(abs(Ds) > abs(observed.D))
     if (plot){
       hist(Ds)
      abline(v=observed.D, col="blue")
