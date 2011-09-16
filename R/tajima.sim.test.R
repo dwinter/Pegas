@@ -21,7 +21,7 @@ tajima.test2 <- function(n,khat,S){
 #this is wrong at the moment!!
 #Returns skewed distirbution of D from simulated data
 tajima.sim.test <- function(x, nreps=1000, plot=TRUE){
-    observed.D <- tajima.test(woodmouse)$D
+    observed.D <- tajima.test(x)$D
     n <- if (is.list(x)) length(x) else dim(x)[1]
     S <- length(seg.sites(x))
     cmd <- paste('ms', n, nreps, '-s', S)
